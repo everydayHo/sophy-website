@@ -1,0 +1,119 @@
+@import './style.css';
+
+/* Product details */
+
+.product_info {
+	padding: 100px 0 135px;
+	background: #fff;
+}
+.product_pictures {
+	text-align: center;
+}
+.product_pictures .thumb_img {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+.product_pictures .thumb_img li {
+	text-align: center;
+	background: #f4f6f8;
+	width: 100px;
+	height: 132px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.product_pictures .thumb_img li img {
+	width: 100px;
+	height: 132px;
+}
+.product_pictures .thumb_img li::before {
+	position: absolute;
+	content: '';
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: #ff5912;
+	opacity: 0;
+	transition: 400ms;
+}
+.product_pictures .thumb_img li.active:before {
+	opacity: 1;
+}
+.product_pictures .thumb_img li.active img {
+	opacity: 0.3;
+}
+
+form hr {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #6c757d;
+	margin: 30px auto 30px;
+}
+
+.option h4,
+.total_price .price {
+	display: inline-block;
+	font-weight: 600;
+	font-size: 18px;
+	color: #34404b;
+	margin-right: 20px;
+}
+.option .size input {
+	display: none;
+}
+.option .size input:checked + label {
+	font-size: 18px;
+	font-weight: 600;
+	color: #ff5912;
+}
+.option .size label {
+	font-size: 14px;
+	transition: 400ms;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.option .quantity input {
+	border: none;
+	width: 30px;
+	color: #ff5912;
+	font-weight: 600;
+	text-align: center;
+	font-size: 18px;
+}
+.option .order_now {
+	align-items: center;
+}
+.option .order_now ul li {
+	margin-right: 10px;
+}
+
+.option .order_now ul li:hover a {
+	background-position-y: -30px;
+}
+
+.option .order_now button {
+	padding: 0 24px;
+	height: 50px;
+	list-style: 50px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	background-color: #ff5912;
+	border-radius: 25px;
+	border: none;
+}
+.order_summary {
+	align-items: center;
+}
+.quantity .plus {
+	font-size: 25px;
+}
+.quantity .minus {
+	font-size: 35px;
+}
+.quantity .quantity_number[value] {
+	font-size: 20px;
+}
