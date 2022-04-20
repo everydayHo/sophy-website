@@ -18,3 +18,16 @@ $(document).ready(function () {
 		auto: true,
 	});
 });
+
+$(document).ready(function () {
+	$('.best_item_list').bxSlider({
+		mode: 'horizontal',
+		controls: false,
+		infiniteLoop: true,
+		maxSlides: 3,
+		minSlides: 3,
+		slideWidth: 800,
+		infiniteLoop: true,
+		auto: true,
+	});
+});

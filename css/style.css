@@ -416,7 +416,8 @@ header .search_form.active {
 	background-position-y: -30px;
 }
 .new_arrivals_list > li {
-	height: 900px;
+	width: 500px;
+	height: 700px;
 	overflow: hidden;
 }
 .new_arrivals_list > li .default img {
@@ -430,4 +431,89 @@ header .search_form.active {
 .new_arrivals_list > li:hover .default img {
 	width: 55%;
 	height: auto;
+}
+
+/* Best item */
+
+.best_sales .best_item_list {
+	display: flex;
+	justify-content: center;
+}
+
+.best_sales .best_item_list li {
+	text-align: center;
+	margin: 10px 10px;
+}
+.best_sales .best_item_list .best_item {
+	width: 300px;
+	height: 480px;
+}
+.best_sales .best_item_list li a {
+	cursor: pointer;
+	display: block;
+}
+.best_sales .best_item_list li img {
+	width: 300px;
+	height: 400px;
+	margin-bottom: 3px;
+}
+.best_sales .best_item_list li h3 {
+	color: #3c4751;
+	font-size: 18px;
+	margin-bottom: 13px;
+	font-weight: 700;
+}
+.best_sales .best_item_list li h4 {
+	color: #3c4751;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/* footer */
+footer {
+	background-color: #fff;
+	padding: 90px 0;
+}
+footer .footer_logo a {
+	width: 118px;
+	height: 39px;
+	background: url('../images/shopy_log.png') no-repeat;
+	text-indent: -9999em;
+	display: block;
+}
+footer p {
+	font-size: 10px;
+	color: #34404b;
+	margin-bottom: 30px;
+}
+
+footer .footer_list {
+	display: flex;
+	flex-wrap: wrap;
+}
+footer .footer_list li {
+	margin-left: 30px;
+	margin-bottom: 10px;
+	color: #34404b;
+	font-size: 14px;
+}
+footer .footer_list li::before {
+	content: '● ';
+	font-size: 4px;
+}
+footer .footer_list li:hover a {
+	color: #ff5912;
+}
+footer .footer_payment h3 {
+	color: #ff5912;
+	font-size: 18px;
+	margin-bottom: 13px;
+	font-weight: 600;
+}
+footer .footer_payment .footer_payment_img {
+	width: 171px;
+	height: 39px;
+	background: url('../images/payment.png') no-repeat;
+	text-indent: -9999em;
+	display: block;
 }
