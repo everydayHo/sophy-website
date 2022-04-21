@@ -28,6 +28,9 @@ li {
 img {
 	vertical-align: top;
 }
+a {
+	cursor: pointer;
+}
 /* Layout */
 
 main,
@@ -226,7 +229,7 @@ header form input[type='text'] {
 	height: 40px;
 	border: none;
 	border-bottom: 1px solid #34404b;
-	width: 540px;
+	width: 50%;
 	display: inline-block;
 	margin-right: 10px;
 	outline: none;

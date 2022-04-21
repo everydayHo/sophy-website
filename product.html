@@ -34,15 +34,22 @@
 		/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+		<!-- jqueryUI -->
+		<link
+			rel="stylesheet"
+			href="http://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+		/>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 		<!-- fontawesome -->
 		<script
 			src="https://kit.fontawesome.com/0ec9f69e50.js"
 			crossorigin="anonymous"
 		></script>
-		<link rel="stylesheet" href="./css/style.css" />
-		<link rel="stylesheet" href="./css/stylelayout.css" />
-		<script src="./js/main.js" defer></script>
+		<!--  isotope-->
+		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+		<link rel="stylesheet" href="./css/product.css" />
+		<script src="./js/product.js" defer></script>
 		<title>Shopy shop any where</title>
 	</head>
 	<body>
@@ -86,10 +93,8 @@
 							</h1>
 							<ul class="col-md-8">
 								<li><a href="./index.html">Home</a></li>
-								<li><a href="./product.html">Products</a></li>
-								<li>
-									<a href="./details.html">Product details</a>
-								</li>
+								<li><a href="#">Products</a></li>
+								<li><a href="./details.html">Product details</a></li>
 								<li><a href="">About</a></li>
 								<li><a href="">Contact</a></li>
 							</ul>
@@ -107,71 +112,94 @@
 				<input type="submit" value="검색" class="search_btn sprites" />
 			</form>
 		</header>
-		<section class="main_slides">
-			<h2 class="hidden">main slides</h2>
-			<ul class="slider">
-				<li class="slide slide1">
-					<div class="container slide_contents">
-						<div class="contents jumbotron">
-							<h2>FULL WINTER KIT</h2>
-							<h3>Half Jacket + Skiny Trousers + Boot leather</h3>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting
-								industry
-							</p>
-							<div class="price_order">
-								<span class="price">Price: $420</span>
-								<span class="cart sprites">cart</span>
-								<a href="" class="order_now">Order now</a>
-							</div>
-						</div>
+		<section class="filters">
+			<h2 class="hidden">category filter</h2>
+			<div class="category_menu">
+				<h3>Categories</h3>
+				<ul>
+					<li><a href="">Man</a></li>
+					<li><a href="">Woman</a></li>
+					<li><a href="">Childrens</a></li>
+					<li><a href="">Hot Deals</a></li>
+				</ul>
+			</div>
+			<div class="list_filters">
+				<div class="price_filter">
+					<h3>Price filter</h3>
+					<div class="price_range"></div>
+					<div class="range_form">
+						<label for="from">from</label>
+						<input type="text" id="from" />
+						<label for="to">to</label>
+						<input type="text" id="to" />
 					</div>
-				</li>
-				<li class="slide slide2">
-					<div class="container slide_contents">
-						<div class="contents jumbotron">
-							<h2>WINTER KNITS</h2>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting
-								industry
-							</p>
-							<div class="price_order">
-								<span class="price">Price: $205</span>
-								<span class="cart sprites">cart</span>
-								<a href="" class="order_now">Order now</a>
-							</div>
-						</div>
+				</div>
+				<div class="combi_filters">
+					<div class="size_filter" data-filter-group="size">
+						<h3>Sizes</h3>
+						<input type="checkbox" name="size" id="sizeall" value="*" />
+						<span class="box">box</span>
+						<label for="sizeall">All</label>
+						<input type="checkbox" name="size" id="small" value=".small" />
+						<span class="box">box</span>
+						<label for="small">Small</label>
+						<input type="checkbox" name="size" id="medium" value=".medium" />
+						<span class="box">box</span>
+						<label for="medium">Medium</label>
+						<input type="checkbox" name="size" id="large" value=".large" />
+						<span class="box">box</span>
+						<label for="large">Large</label>
+						<input type="checkbox" name="size" id="xlarge" value=".xlarge" />
+						<span class="box">box</span>
+						<label for="xlarge">X large</label>
 					</div>
-				</li>
-				<li class="slide slide3">
-					<div class="container slide_contents">
-						<div class="contents jumbotron">
-							<h2>CHRISTMAS GIFT</h2>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting
-								industry
-							</p>
-							<div class="price_order">
-								<span class="price">Price: $340</span>
-								<span class="cart sprites">cart</span>
-								<a href="" class="order_now">Order now</a>
-							</div>
-						</div>
+					<div class="brand_filter" data-filter-group="brand">
+						<h3>Brands</h3>
+							<input type="checkbox" name="brand" id="brandall" value="*" />
+						<span class="box">box</span>
+						<label for="brandall">All</label>
+						<input
+							type="checkbox"
+							name="brand"
+							id="commedesgarcons"
+							value=".commedesgarcons"
+						/>
+						<span class="box">box</span>
+						<label for="commedesgarcons">Comme des garcons</label>
+						<input
+							type="checkbox"
+							name="brand"
+							id="maisonmargiela"
+							value=".maisonmargiela"
+						/>
+						<span class="box">box</span>
+						<label for="maisonmargiela">Maisonmargiela</label>
+						<input
+							type="checkbox"
+							name="brand"
+							id="rafsimons"
+							value=".rafsimons"
+						/>
+						<span class="box">box</span>
+						<label for="rafsimons">Raf Simons</label>
+						<input type="checkbox" name="brand" id="kitsune" value=".kitsune" />
+						<span class="box">box</span>
+						<label for="kitsune">Maison Kitsune </label>
 					</div>
-				</li>
-			</ul>
+				</div>
+			</div>
 		</section>
 		<main class="container">
 			<section class="new_arrivals">
-				<h2 class="contents_title"><span>NEW</span>ARRIVALS</h2>
+				<h2 class="contents_title">WOMAN<span>NEW</span>ITEM</h2>
 				<p class="contents_desc">
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry
 				</p>
-				<ul class="row justify-content-around new_arrivals_list">
-					<li id="product_01" class="col-md-4">
+				<ul class="row justify-content-start new_arrivals_list">
+					<li id="product_01" class="col-md-4 medium commedesgarcons">
 						<div class="list_contents">
-							<div class="default">
+							<div class="default"
 								<a href="./details.html">
 									<img src="./images/gm1.png" alt="knit" />
 								</a>
@@ -194,7 +222,7 @@
 							</div>
 						</div>
 					</li>
-					<li id="product_02" class="col-md-4">
+					<li id="product_02" class="col-md-4 small commedesgarcons">
 						<div class="list_contents">
 							<div class="default">
 								<img src="./images/gm2.png" alt="knit" />
@@ -217,7 +245,7 @@
 							</div>
 						</div>
 					</li>
-					<li id="product_03" class="col-md-4">
+					<li id="product_03" class="col-md-4 large commedesgarcons">
 						<div class="list_contents">
 							<div class="default">
 								<img src="./images/gm3.png" alt="knit" />
@@ -240,7 +268,7 @@
 							</div>
 						</div>
 					</li>
-					<li id="product_04" class="col-md-4">
+					<li id="product_04" class="col-md-4 large commedesgarcons">
 						<div class="list_contents">
 							<div class="default">
 								<img src="./images/gm4.png" alt="dress" />
@@ -263,7 +291,7 @@
 							</div>
 						</div>
 					</li>
-					<li id="product_05" class="col-md-4">
+					<li id="product_05" class="col-md-4 medium maisonmargiela">
 						<div class="list_contents">
 							<div class="default">
 								<img src="./images/gm5.png" alt="dress" />
@@ -286,7 +314,7 @@
 							</div>
 						</div>
 					</li>
-					<li id="product_06" class="col-md-4">
+					<li id="product_06" class="col-md-4 small rafsimons">
 						<div class="list_contents">
 							<div class="default">
 								<img src="./images/gm6.png" alt="dress" />
